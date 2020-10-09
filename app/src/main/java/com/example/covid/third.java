@@ -6,6 +6,7 @@ import androidx.core.view.NestedScrollingChild;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.sql.SQLOutput;
@@ -29,11 +30,15 @@ public class third extends AppCompatActivity {
         setContentView(R.layout.activity_third);
         TextView text = findViewById(R.id.admin);
         ArrayList transfer = new ArrayList();
-        String main ="";
-        String name= intent.getStringExtra("name");
-      //  child1.setName(name);
+        StudentRecord alex = (StudentRecord) intent.getSerializableExtra("studentRecord");
+        q.add((StudentRecord)intent.getSerializableExtra("studentRecord"));
+        text.setText(names += alex.getName());
+     /*   String name = intent.getStringExtra("name");
+        //  child1.setName(name);
         ArrayList<String> listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
-        q.add("");
+
+      */
+/*        q.add("");
         for (int j = 0; j< q.size(); ++j) {
             child child1 = new child();
             child1.setName(name);
@@ -62,7 +67,13 @@ public class third extends AppCompatActivity {
 
     }
 
+*/
 
+    }
+    public void launchmain(View view){
 
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
 
+    }
 }

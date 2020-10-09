@@ -16,6 +16,7 @@ public class actvivity_second extends AppCompatActivity {
     String main = " ";
     ArrayList<String> listOfSymptoms = new ArrayList<>();
     String message;
+    StudentRecord student;
 
 
     @Override
@@ -24,13 +25,15 @@ public class actvivity_second extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         textView = findViewById(R.id.text_message);
         Intent intent = getIntent();
+        student = (StudentRecord) intent.getSerializableExtra("studentRecord");
+        textView.setText("Hi," + student.getName());
         message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         Boolean Name = intent.getBooleanExtra("name",false);
         listOfSymptoms = intent.getStringArrayListExtra("ListOfSymptoms");
         Boolean school = intent.getBooleanExtra("School1", true);
         System.out.println(Name.toString());
         //if to see if there is something in text box
-        if (Name == true) {
+       if (Name == true) {
             if (message == null)
                 textView.setText("???? null");
             else {
@@ -60,6 +63,7 @@ public class actvivity_second extends AppCompatActivity {
         Intent intent= new Intent(this, third.class);
         intent.putExtra("name",message);
         intent.putExtra("ListOfSymptoms",listOfSymptoms);
+        intent.putExtra("studentRecord",student);
         startActivity(intent);
 
     }

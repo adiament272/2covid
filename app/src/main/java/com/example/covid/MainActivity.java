@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
        intent.putExtra("ListOfSymptoms",listOfSymptoms);
        intent.putExtra("School1",school);
       intent.putExtra("name", NAME);
+      StudentRecord studentRecord = new StudentRecord(mMessageEditText.getText().toString(),listOfSymptoms,NAME);
+        intent.putExtra("studentRecord",studentRecord);
       Log.d(LOG_TAG,NAME.toString());
         startActivity(intent);
 

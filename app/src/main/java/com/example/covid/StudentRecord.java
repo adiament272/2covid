@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class child implements Serializable {
+public class StudentRecord implements Serializable {
     private String name;
     private Intent intent;
     public boolean isAllowed;
@@ -17,7 +17,12 @@ public class child implements Serializable {
 
 
 
+    public StudentRecord(String name, ArrayList<String> listOfSymptoms, boolean isAllowed){
+        this.name = name;
+        this.listOfSymptoms = listOfSymptoms;
+        this.isAllowed = isAllowed;
 
+    }
     public String getName() {
         return name;
     }
